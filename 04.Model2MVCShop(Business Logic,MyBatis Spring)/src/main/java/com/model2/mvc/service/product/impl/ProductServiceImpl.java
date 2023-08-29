@@ -15,7 +15,7 @@ import com.model2.mvc.service.domain.User;
 import com.model2.mvc.service.product.ProductDao;
 import com.model2.mvc.service.product.ProductService;
 
-@Service("ProductServiceImpl")
+@Service("productServiceImpl")
 public class ProductServiceImpl  implements ProductService{
 
 	//Field
@@ -33,6 +33,7 @@ public class ProductServiceImpl  implements ProductService{
 	
 
 	public void  addProduct(Product product) throws Exception {
+		System.out.println("addd-=========");
 		productDao.addProduct(product);
 	
 	}

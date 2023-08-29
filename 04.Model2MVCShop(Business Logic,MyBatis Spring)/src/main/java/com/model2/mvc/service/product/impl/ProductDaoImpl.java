@@ -14,7 +14,7 @@ import com.model2.mvc.service.product.ProductDao;
 
 
 //==> 회원관리 DAO CRUD 구현
-@Repository("ProductDaoImpl")
+@Repository("productDaoImpl")
 public class ProductDaoImpl implements ProductDao{
 	
 	@Autowired
@@ -31,28 +31,28 @@ public class ProductDaoImpl implements ProductDao{
 	
 	@Override
 	public void addProduct(Product product) throws Exception {
-		sqlSession.insert("ProducMapper.addUser",product);
+		sqlSession.insert("ProductMapper.addProduct",product);
 		
 	}
 	@Override
 	public Product getProduct(int prodNo) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("ProducMapper.getUser",prodNo);
+		return sqlSession.selectOne("ProductMapper.getProduct",prodNo);
 	}
 	@Override
 	public List<Product> getProductList(Search search) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("UserMapper.getUserList", search);
+		return sqlSession.selectList("ProductMapper.getProductList", search);
 	}
 	@Override
 	public void updateProduct(Product product) throws Exception {
-		// TODO Auto-generated method stub
+		sqlSession.update("ProductMapper.updateProduct", product);
 		
 	}
 	@Override
 	public int getTotalCount(Search search) throws Exception {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("UserMapper.getTotalCount", search);
+		return sqlSession.selectOne("ProductMapper.getTotalCount", search);
 	}
 
 }

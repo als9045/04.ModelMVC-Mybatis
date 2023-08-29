@@ -183,7 +183,7 @@ public class UserServiceTest {
 	 	System.out.println(totalCount);
 	 }
 	 
-	 //@Test
+	 @Test
 	 public void testGetUserListByUserId() throws Exception{
 		 
 	 	Search search = new Search();
