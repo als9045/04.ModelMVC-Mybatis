@@ -85,15 +85,15 @@
 	<!-- SQL : SELECT ROW Count -->	 
 	<select  id="getTotalCount"  parameterType="search"	 resultType="int">
 	  	SELECT COUNT(*)
-	  	FROM(	SELECT user_id , user_name , email
-						FROM users
+	  	FROM(	SELECT prod_no , prod_detail , price
+						FROM product
 						<if test="searchCondition != null">
 							<where>
 								<if test="searchCondition == 0 and searchKeyword !='' ">
-						 			user_id = #{searchKeyword}
+						 			prod_name = #{searchKeyword}
 								</if>
 								<if test="searchCondition == 1 and searchKeyword !='' ">
-						 		user_name = #{searchKeyword}
+						 			prod_detail = #{searchKeyword}
 								</if>
 							</where>
 						</if> ) countTable						
